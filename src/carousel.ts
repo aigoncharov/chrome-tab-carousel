@@ -17,7 +17,7 @@ export class Carousel {
 
   public start(windowId: number) {
     console.debug('start', windowId)
-    if (this.stateInternal === 'active') {
+    if (this.stateInternal !== 'inactive') {
       throw new Error('Already started')
     }
     this.windowIdInternal = windowId
