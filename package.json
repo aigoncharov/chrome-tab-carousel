@@ -5,8 +5,7 @@
   "main": "jest.config.js",
   "scripts": {
     "test": "npx jest",
-    "start": "npx shx rm -rf dist && node ./fuse.js",
-    "compile": "npx shx rm -rf dist && node ./fuse.prod.js"
+    "compile": "npx shx rm -rf dist && node ./fuse.js && npx shx cp src/options.html dist/options.html"
   },
   "repository": {
     "type": "git",

@@ -2,22 +2,36 @@ import { promisify } from './utils'
 
 export class FocusListener {
   private state?: { targetWindowId: number; focused: boolean }
+  private unsubscribe?: () => void
 
-  constructor(private readonly onTargetWindowFocusChange: (isFocused: boolean) => void) {
+  constructor(private readonly onTargetWindowFocusChange: (isFocused: boolean) => void) {}
+
+  public async start(targetWindowId: number) {
+    this.unsubscribe?.()
+
+    this.state = {
+      targetWindowId,
+      focused: true,
+    }
+
     this.listenWindowFocusChange()
   }
 
-  public async setTargetWindow(targetWindowId: number) {
-    const targetWindow = await promisify(chrome.windows.get.bind(chrome.windows, targetWindowId, {}))
-    this.state = {
-      targetWindowId,
-      focused: targetWindow.focused,
-    }
+  public stop() {
+    this.unsubscribe?.()
+    this.state = undefined
   }
 
   private listenWindowFocusChange() {
-    chrome.windows.onFocusChanged.addListener(() => this.checkFocusUpdate())
-    setInterval(() => this.checkFocusUpdate(), 100)
+    const onFocusChanged = () => this.checkFocusUpdate()
+    chrome.windows.onFocusChanged.addListener(onFocusChanged)
+
+    const intervalId = setInterval(() => this.checkFocusUpdate(), 100)
+
+    this.unsubscribe = () => {
+      clearInterval(intervalId)
+      chrome.windows.onFocusChanged.removeListener(onFocusChanged)
+    }
   }
 
   private async checkFocusUpdate() {

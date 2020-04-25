@@ -1,12 +1,16 @@
 {
-  "name": "Tab Carousel Revised",
+  "name": "Simple Tab Carousel",
   "version": "0.0.1",
-  "description": "Tab carousel",
+  "description": "Tab carousel which pauses on a window focus",
   "manifest_version": 2,
   "background": {
     "scripts": ["dist/background.js"],
     "persistent": false
   },
-  "permissions": ["tabs", "windows"],
-  "browser_action": {}
+  "permissions": ["tabs", "windows", "storage"],
+  "browser_action": {},
+  "options_ui": {
+    "page": "dist/options.html",
+    "open_in_tab": true
+  }
 }

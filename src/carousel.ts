@@ -8,7 +8,7 @@ type State = 'inactive' | 'paused' | 'active'
 
 export class Carousel {
   private settingsInternal: Settings = {
-    speed: 1000,
+    speed: 10000,
   }
   private timerId?: number
   private windowIdInternal?: number
@@ -21,8 +21,7 @@ export class Carousel {
       throw new Error('Already started')
     }
     this.windowIdInternal = windowId
-    this.stateInternal = 'active'
-    this.scheduleFocusShift()
+    this.stateInternal = 'paused'
   }
 
   public stop() {
@@ -32,6 +31,7 @@ export class Carousel {
       return
     }
     this.stateInternal = 'inactive'
+    this.windowIdInternal = undefined
     this.clearSchedule()
   }
 
