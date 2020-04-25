@@ -1,0 +1,36 @@
+{
+  "name": "chrome-tab-carousel",
+  "version": "0.0.1",
+  "description": "",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "npx jest",
+    "start": "npx shx rm -rf dist && node ./fuse.js",
+    "compile": "npx shx rm -rf dist && node ./fuse.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aigoncharov/chrome-tab-carousel.git"
+  },
+  "author": "Andrey Goncharov (andrey@goncharov)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aigoncharov/chrome-tab-carousel/issues"
+  },
+  "homepage": "https://github.com/aigoncharov/chrome-tab-carousel#readme",
+  "devDependencies": {
+    "@types/chrome": "0.0.104",
+    "@types/jest": "^25.2.1",
+    "doctoc": "^1.4.0",
+    "fuse-box": "^3.7.1",
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "lint-staged": "^10.1.7",
+    "prettier": "^2.0.5",
+    "shx": "^0.3.2",
+    "terser": "^4.6.12",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3",
+    "uglify-js": "^3.9.1"
+  }
+}
