@@ -7,7 +7,7 @@
     "scripts": ["dist/background.js"],
     "persistent": false
   },
-  "permissions": ["tabs", "windows", "storage"],
+  "permissions": ["storage"],
   "browser_action": {},
   "options_ui": {
     "page": "dist/options.html",
