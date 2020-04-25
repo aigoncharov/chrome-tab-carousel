@@ -1,6 +1,6 @@
 {
   "name": "Simple Tab Carousel",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Tab carousel which pauses on a window focus",
   "manifest_version": 2,
   "background": {
