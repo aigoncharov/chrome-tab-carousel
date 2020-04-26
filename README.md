@@ -2,7 +2,8 @@
 
 > Icons are borrowed from [fontawesome](https://fontawesome.com/icons/sync-alt?style=solid) under [this license](https://fontawesome.com/license). Icons are not modified, but converted to the .png.
 
-Make Chrome cycle through your tabs automatically.
+Make Chrome cycle through your tabs automatically.    
+    
 ![](https://media.giphy.com/media/jtpGTIPOdyzVse7DOR/giphy.gif)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
