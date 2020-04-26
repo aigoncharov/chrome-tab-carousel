@@ -1,6 +1,6 @@
 {
   "name": "chrome-tab-carousel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tab carousel for Chrome which pauses on a window focus",
   "main": "jest.config.js",
   "scripts": {

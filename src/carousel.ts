@@ -16,7 +16,6 @@ export class Carousel {
   constructor(private onError: (error: Error) => void) {}
 
   public start(windowId: number) {
-    console.debug('start', windowId)
     if (this.stateInternal !== 'inactive') {
       throw new Error('Already started')
     }
@@ -25,7 +24,6 @@ export class Carousel {
   }
 
   public stop() {
-    console.debug('stop')
     if (this.stateInternal === 'inactive') {
       console.warn('Already stopped')
       return
@@ -36,9 +34,7 @@ export class Carousel {
   }
 
   public pause() {
-    console.debug('pause')
     if (this.stateInternal !== 'active') {
-      console.warn(`Current state is ${this.stateInternal}. It cannot be paused.`)
       return
     }
     this.stateInternal = 'paused'
@@ -46,9 +42,7 @@ export class Carousel {
   }
 
   public resume() {
-    console.debug('resume')
     if (this.stateInternal !== 'paused') {
-      console.warn(`Current state is ${this.stateInternal}. It cannot be resumed.`)
       return
     }
     this.stateInternal = 'active'

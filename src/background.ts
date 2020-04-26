@@ -6,19 +6,7 @@ import { promisify } from './utils'
 const carousel = new Carousel((error) => {
   console.error(error)
 })
-const focusListener = new FocusListener((isFocused) => {
-  if (isFocused) {
-    if (carousel.state !== 'active') {
-      return
-    }
-    carousel.pause()
-  } else {
-    if (carousel.state !== 'paused') {
-      return
-    }
-    carousel.resume()
-  }
-})
+const focusListener = new FocusListener((isFocused) => (isFocused ? carousel.pause() : carousel.resume()))
 
 const enable = async () => {
   const window = await promisify(chrome.windows.getCurrent.bind(chrome.windows, {}))
