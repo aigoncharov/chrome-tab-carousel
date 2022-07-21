@@ -27,7 +27,7 @@
     "lint-staged": "^10.1.7",
     "prettier": "^2.0.5",
     "shx": "^0.3.2",
-    "terser": "^4.6.12",
+    "terser": "^4.8.1",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3",
     "uglify-js": "^3.9.1"
