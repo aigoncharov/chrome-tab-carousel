@@ -1,7 +1,7 @@
 {
   "name": "chrome-tab-carousel",
-  "version": "0.2.0",
-  "description": "Tab carousel for Chrome which pauses on a window focus",
+  "version": "0.3.0",
+  "description": "Tab carousel for Chrome which pauses on a window focus, and reloads the page.",
   "main": "jest.config.js",
   "scripts": {
     "test": "npx jest",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/aigoncharov/chrome-tab-carousel.git"
   },
-  "author": "Andrey Goncharov (andrey@goncharov)",
+  "author": "Andrey Goncharov (andrey@goncharov), fork by Dmytro Ryzhyi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aigoncharov/chrome-tab-carousel/issues"
